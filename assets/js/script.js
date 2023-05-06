@@ -7,8 +7,8 @@ var secondsLeft = 4;
 // eventListener for 'start quiz' button
 //     window.location.href = "./quiz.html";     save for after countdown
 startButton.addEventListener("click", function() {
-    document.body.children[1].children[0].setAttribute("style", "display: none");
-    document.body.children[1].children[1].setAttribute("style", "display: null");
+    document.body.children[0].children[0].setAttribute("style", "display: none");
+    document.body.children[0].children[1].setAttribute("style", "display: null");
 
     var timerInterval = setInterval(function() {
         secondsLeft--;
@@ -21,7 +21,6 @@ startButton.addEventListener("click", function() {
         }
     }, 1000);
 })
-
 
 function changeToQuiz() {
     window.location.href = "./quiz.html";
