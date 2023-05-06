@@ -1,5 +1,6 @@
 var startButton = document.querySelector("#startButton")
 var preCountdown = document.querySelector("#countdownTimer")
+var playAgainButton = document.querySelector("#playAgainButton")
 
 
 var secondsLeft = 4;
@@ -26,7 +27,13 @@ function changeToQuiz() {
     window.location.href = "./quiz.html";
 }
 
+playAgainButton.addEventListener("click", function() {
+    playAgainOnClick();
+})
 
+function playAgainOnClick() {
+    window.location.href = "./index.html";
+}
 
 
 
