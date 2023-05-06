@@ -11,6 +11,13 @@ function showQuestionOne(q) {
     quizQ.textContent = question.quizQuestion;
     quizOptions.forEach(function(element, index) {
         element.textContent = question.options[index];
+        element.addEventListener("click", function() {
+            if (question.correctAnswer == index) {
+                console.log("correct answer");
+            } else {
+                console.log("incorrect answer");
+            }
+        })
     });
 }
 
