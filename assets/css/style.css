@@ -14,9 +14,16 @@ h2 {
 
 li {
     margin-top: 25px;
+    background-color: #383838;
 }
 
 li:hover {
     text-decoration: underline;
     font-weight: 700;
+    background-color: #6e6e6e;
+}
+
+#answerFeedback {
+    text-align: center;
+    margin-top: 50px;
 }

@@ -1,6 +1,10 @@
 // queryselectors to replace div and li with text from object
 var quizQ = document.getElementById("quizQ");
 var quizOptions = document.querySelectorAll("#answerOptions li");
+var leaderboard = document.getElementById("leaderboard");
+var answerOptions = document.getElementById("answerOptions");
+var scoreCounter = document.getElementById("scoreCounter");
+var answerFeedback = document.getElementById("answerFeedback");
 
 
 // list of questions to be utilized by quizLogic()
@@ -58,7 +62,10 @@ function getCurrentQuestion() {
 }
 
 function changeToEndScreen() {
-    window.location.href = "./end-screen.html";
+    quizQ.setAttribute("style", "display: none");
+    answerOptions.setAttribute("style", "display: none");
+    answerFeedback.setAttribute("style", "display: none");
+    leaderboard.setAttribute("style", "display: null");
 }
 
 function correctClick() {
@@ -66,6 +73,8 @@ function correctClick() {
     (score = score + 5);
     console.log("correct test");
     console.log("score: " + score);
+    scoreCounter.textContent = "Score: " + score;
+    answerFeedback.textContent = "You got that one correct! Now try this one!";
     if (iter < questionList.length) {
         quizLogic();
     } else {
@@ -74,9 +83,27 @@ function correctClick() {
 }
 
 function incorrectClick() {
-    (score = score - 5);
+    iter++;
+    (score = score - 4);
     console.log("incorrect test");
     console.log("score: " + score);
+    scoreCounter.textContent = "Score: " + score;
+    answerFeedback.textContent = "Incorrect...Now try this one!";
+        if (iter < questionList.length) {
+        quizLogic();
+    } else {
+        changeToEndScreen();
+    }
 }
 
+
+
+scoreCounter.textContent = "Score: " + score;
+
+
 quizLogic();
+
+// html change endscreen
+// function changeToEndScreen() {
+//     window.location.href = "./end-screen.html";
+// }
