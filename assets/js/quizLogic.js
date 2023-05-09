@@ -6,8 +6,8 @@ var quizOptions = document.querySelectorAll("#answerOptions li");
 // list of questions to be utilized by quizLogic()
 var questionList = [
     {
-        quizQuestion: "who dat boi?",
-        options: ["it spub", "test2", "test3", "test4"],
+        quizQuestion: "What language is the logic for this quiz written in?",
+        options: ["JavaScript", "HTML", "Python", "jQuery"],
         correctAnswer: 0,
     },
     {
@@ -63,7 +63,7 @@ function changeToEndScreen() {
 
 function correctClick() {
     iter++;
-    score++;
+    (score = score + 5);
     console.log("correct test");
     console.log("score: " + score);
     if (iter < questionList.length) {
@@ -74,7 +74,7 @@ function correctClick() {
 }
 
 function incorrectClick() {
-    score--;
+    (score = score - 5);
     console.log("incorrect test");
     console.log("score: " + score);
 }
