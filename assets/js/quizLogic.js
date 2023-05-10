@@ -2,6 +2,7 @@
 var quizQ = document.getElementById("quizQ");
 var quizOptions = document.querySelectorAll("#answerOptions li");
 var leaderboard = document.getElementById("leaderboard");
+var enterName = document.getElementById("enterName");
 var answerOptions = document.getElementById("answerOptions");
 var scoreCounter = document.getElementById("scoreCounter");
 var answerFeedback = document.getElementById("answerFeedback");
@@ -65,7 +66,7 @@ function changeToEndScreen() {
     quizQ.setAttribute("style", "display: none");
     answerOptions.setAttribute("style", "display: none");
     answerFeedback.setAttribute("style", "display: none");
-    leaderboard.setAttribute("style", "display: null");
+    enterName.setAttribute("style", "display: null");
 }
 
 function correctClick() {
