@@ -76,6 +76,7 @@ function correctClick() {
     console.log("score: " + score);
     scoreCounter.textContent = "Score: " + score;
     answerFeedback.textContent = "You got that one correct! Now try this one!";
+    answerFeedback.setAttribute("style", "color: green");
     if (iter < questionList.length) {
         quizLogic();
     } else {
@@ -90,6 +91,7 @@ function incorrectClick() {
     console.log("score: " + score);
     scoreCounter.textContent = "Score: " + score;
     answerFeedback.textContent = "Incorrect...Now try this one!";
+    answerFeedback.setAttribute("style", "color: red");
         if (iter < questionList.length) {
         quizLogic();
     } else {
@@ -104,7 +106,12 @@ scoreCounter.textContent = "Score: " + score;
 
 quizLogic();
 
-// html change endscreen
-// function changeToEndScreen() {
-//     window.location.href = "./end-screen.html";
-// }
+
+
+var userName = document.getElementById("#fname");
+var userInput = document.getElementById("submit")
+userInput.addEventListener("submit"); {
+    event.preventDefault();
+    var nameinput = userName;
+    console.log(nameinput);
+}

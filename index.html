@@ -8,12 +8,20 @@
 
 <body>
     <main>
-        <section style="display: null">
+        <div id="howItWorks">
+            <h2>Welcome to my quiz!</h2>
+            <h3>Here's how it works:</h3>
+            <ul>
+                <li>Correct answers give you 5 points</li>
+                <li>Incorrect answers remove 4 points</li>
+                <li>The quiz ends when the timer runs out or you answer all the questions</li>
+                <li>Click the start button to begin!</li>
+            </ul>
+        </div>
+        <section id="startQuizButton" style="display: null">
             <button id="startButton">Click to start the quiz!</button>
         </section>
-        <section style="display: none">
-            <h2 id="countdownTimer"></h2>
-        </section>
+
 
     </main>
     <script src="./assets/js/script.js"></script>
