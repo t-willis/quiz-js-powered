@@ -6,6 +6,8 @@ var enterName = document.getElementById("enterName");
 var answerOptions = document.getElementById("answerOptions");
 var scoreCounter = document.getElementById("scoreCounter");
 var answerFeedback = document.getElementById("answerFeedback");
+var submit = document.getElementById("submit");
+var highScores;
 
 
 // list of questions to be utilized by quizLogic()
@@ -69,6 +71,7 @@ function changeToEndScreen() {
     enterName.setAttribute("style", "display: null");
 }
 
+
 function correctClick() {
     iter++;
     (score = score + 5);
@@ -100,18 +103,29 @@ function incorrectClick() {
 }
 
 
-
 scoreCounter.textContent = "Score: " + score;
+
+
+
+
+
+submit.addEventListener("click", function(event) {
+    event.preventDefault();
+    var fname = document.getElementById("fname").value;
+    if (!localStorage.getItem("scoredata")) {
+        highScores = [];
+        highScores.push({name: fname, highscore: score});
+        localStorage.setItem("scoredata", JSON.stringify(highScores));
+    } else {
+        var highScores = JSON.parse(localStorage.getItem("scoredata"));
+        highScores.push({name: fname, highscore: score});
+        localStorage.setItem("scoredata", JSON.stringify(highScores));
+    
+} window.location.href = "./end-screen.html";
+})
+
+
 
 
 quizLogic();
 
-
-
-var userName = document.getElementById("#fname");
-var userInput = document.getElementById("submit")
-userInput.addEventListener("submit"); {
-    event.preventDefault();
-    var nameinput = userName;
-    console.log(nameinput);
-}
