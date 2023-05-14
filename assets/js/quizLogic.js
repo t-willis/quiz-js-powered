@@ -72,6 +72,7 @@ function changeToEndScreen() {
     answerOptions.setAttribute("style", "display: none");
     answerFeedback.setAttribute("style", "display: none");
     enterName.setAttribute("style", "display: null");
+    timeCounter.textContent = "Great job!";
 }
 
 
@@ -87,6 +88,7 @@ function correctClick() {
         quizLogic();
     } else {
         changeToEndScreen();
+        timeCounter.setAttribute("style", "display: none");
     }
 }
 
