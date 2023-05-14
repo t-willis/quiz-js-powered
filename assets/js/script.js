@@ -1,27 +1,24 @@
+// variables to be used below
 var startButton = document.querySelector("#startButton")
 var preCountdown = document.querySelector("#countdownTimer")
 
 
-
-var secondsLeft = 4;
-
 // eventListener for 'start quiz' button
-//     window.location.href = "./quiz.html";     save for after countdown
 startButton.addEventListener("click", function() {
     changeToQuiz();
 })
 
+// function for 'start quiz' button
 function changeToQuiz() {
     window.location.href = "./quiz.html";
 }
 
+// eventListener for 'play again' button
 playAgainButton.addEventListener("click", function() {
     playAgainOnClick();
 })
 
+// function for 'play again' button
 function playAgainOnClick() {
     window.location.href = "./index.html";
 }
-
-
-
