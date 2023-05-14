@@ -13,7 +13,7 @@ section {
 }
 
 
-h2 {
+h2, h4 {
     text-align: center;
 }
 
@@ -23,6 +23,7 @@ li {
     animation-name: ease-in-out 500ms;
     transition: 0.5s ease;
     padding-left: 10px;
+    text-align: center;
 }
 
 #answerOptions li:hover {
@@ -44,4 +45,16 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#end-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#quizQ {
+    text-align: center;
+    font-weight: 600;
+    font-size: 150%;
 }

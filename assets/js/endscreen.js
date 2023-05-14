@@ -7,9 +7,6 @@ playAgainButton.addEventListener("click", function(event) {
 })
 
 
-// var li1 = document.createElement("li");
-// highScoreOl.append(li1);
-
 
 var retrievedData = localStorage.getItem("scoredata");
 
@@ -21,12 +18,9 @@ parsedData.sort((a, b) => a.highscore + b.highscore);
 
 
 for (var i = 0; i < parsedData.length; i++) {
-    highScoreOl.append(document.createElement("li"));
-    highScoreOl.children[i].textContent = parsedData[i].name + parsedData[i].highscore;
+    highScoreOl.append(document.createElement("h4"));
+    highScoreOl.children[i].textContent = parsedData[i].name + " | " + parsedData[i].highscore;
 }
-
-
-// li1.textContent = parsedData[0].name + " | Score: " + parsedData[0].highscore;
 
 
 
