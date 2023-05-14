@@ -45,6 +45,8 @@ var questionList = [
 var score = 0;
 var iter = 0;
 
+var timeRemove = 0;
+
 // actual quiz logic function
 function quizLogic() {
     var currentQuestion = getCurrentQuestion();
@@ -86,6 +88,8 @@ function correctClick() {
     answerFeedback.setAttribute("style", "color: green");
     if (iter < questionList.length) {
         quizLogic();
+        timeRemove = 0;
+        console.log(timeRemove);
     } else {
         changeToEndScreen();
         timeCounter.setAttribute("style", "display: none");
@@ -102,6 +106,8 @@ function incorrectClick() {
     answerFeedback.setAttribute("style", "color: red");
         if (iter < questionList.length) {
         quizLogic();
+        timeLeft = (timeLeft - 5);
+        console.log(timeRemove);
     } else {
         changeToEndScreen();
     }
@@ -109,9 +115,9 @@ function incorrectClick() {
 
 
 scoreCounter.textContent = "Score: " + score;
-
+var timeLeft = 30;
 function countdown() {
-    var timeLeft = 30;
+
 
     var timeInterval = setInterval(function () {
         timeLeft--;
