@@ -5,9 +5,12 @@ var leaderboard = document.getElementById("leaderboard");
 var enterName = document.getElementById("enterName");
 var answerOptions = document.getElementById("answerOptions");
 var scoreCounter = document.getElementById("scoreCounter");
+var timeCounter = document.getElementById("timeCounter");
+
 var answerFeedback = document.getElementById("answerFeedback");
 var submit = document.getElementById("submit");
 var highScores;
+
 
 
 // list of questions to be utilized by quizLogic()
@@ -104,6 +107,26 @@ function incorrectClick() {
 
 
 scoreCounter.textContent = "Score: " + score;
+
+function countdown() {
+    var timeLeft = 30;
+
+    var timeInterval = setInterval(function () {
+        timeLeft--;
+        if (timeLeft !== 0) {
+          timeCounter.textContent = "Time left: " + timeLeft + "s";
+        }
+    
+        if(timeLeft === 0) {
+          clearInterval(timeInterval);
+          timeCounter.textContent = "Time is up!";
+          changeToEndScreen();
+        }
+    
+    
+      }, 1000);
+    }
+countdown();
 
 
 
