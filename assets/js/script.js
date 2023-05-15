@@ -12,13 +12,3 @@ startButton.addEventListener("click", function() {
 function changeToQuiz() {
     window.location.href = "./quiz.html";
 }
-
-// eventListener for 'play again' button
-playAgainButton.addEventListener("click", function() {
-    playAgainOnClick();
-})
-
-// function for 'play again' button
-function playAgainOnClick() {
-    window.location.href = "./index.html";
-}

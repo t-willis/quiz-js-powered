@@ -82,7 +82,6 @@ function quizLogic() {
 // function to pull questions from questionList depending on value of iter variable
 function getCurrentQuestion() {
     var ret = questionList[iter];
-    console.log(ret);
     return ret;
 }
 
@@ -101,8 +100,6 @@ function changeToEndScreen() {
 function correctClick() {
     iter++;
     (score = score + 5);
-    console.log("correct test");
-    console.log("score: " + score);
     scoreCounter.textContent = "Score: " + score;
     answerFeedback.textContent = "You got that one correct! Now try this one!";
     answerFeedback.setAttribute("style", "color: green");
@@ -119,8 +116,6 @@ function correctClick() {
 function incorrectClick() {
     iter++;
     (score = score - 4);
-    console.log("incorrect test");
-    console.log("score: " + score);
     scoreCounter.textContent = "Score: " + score;
     answerFeedback.textContent = "Incorrect...Now try this one!";
     answerFeedback.setAttribute("style", "color: red");
@@ -134,7 +129,7 @@ function incorrectClick() {
 }
 
 
-// timer function to countdown remainint time and update score
+// timer function to countdown remaining time and update score
 scoreCounter.textContent = "Score: " + score;
 var timeLeft = 60;
 function countdown() {
